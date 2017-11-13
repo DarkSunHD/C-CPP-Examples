@@ -1,3 +1,23 @@
+/*
+    This program converts roman numbers to decimal numbers
+
+    Copyright (C) 2017  Hold Alexander
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+
 #include <iostream>
 #include <stdio.h>
 #include <cstring>
@@ -47,16 +67,16 @@ int checklvl(char czahl){
 
 
 int main(int argc, char* argv[]) {
-        printf("Hallo ich bin ein Wandler der römische Zahlen in decimale Zahlen wandelt!\n\n");
+        printf("Hello I convert roman numbers to decimal numbers\n\n");
 
         char czahl[128];
-        printf("Römische Zahl eingeben: ");
+        printf("Enter roman number: ");
         int scanerr = scanf("%s",czahl);
 
         printf("\n\n");
         
         if(scanerr != 1){
-                printf("Fehler beim einlesen!\n");
+                printf("Error (read input)!\n");
                 return 0;
         }
 
@@ -127,7 +147,7 @@ int main(int argc, char* argv[]) {
                  if(i > 1){
                          //printf("Cur lvl %d \n ", curlvl);
                          if(curlvl > checklvl(cromseq[i-1]) && curlvl > checklvl(cromseq[i-2])){
-                                 printf("\nFehler, gegebene Zahl ist keine legitime römische Zahl\n\n");
+                                 printf("\nError, the input is not a legit roman number!\n\n");
                                  return 0;
                          }
                 
@@ -137,7 +157,7 @@ int main(int argc, char* argv[]) {
 
          
 
-         printf("Die römische Zahl lautet:  %s \n", cromseq);
+         printf("The roman number:  %s \n", cromseq);
 
         int lvl = 7;
         int len =  strlen(cromseq) - 1;
@@ -238,6 +258,6 @@ int main(int argc, char* argv[]) {
                 }
         }
 
-         printf("Die decimal Zahl lautet: %d \n\n", buf);
+         printf("The decimal number: %d \n\n", buf);
         return 0;
 }
